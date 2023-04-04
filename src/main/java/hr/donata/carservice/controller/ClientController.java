@@ -61,7 +61,7 @@ public class ClientController {
         if(optionalClient.isPresent()) {
             return ResponseEntity.ok(optionalClient.get());
         }
-        throw new RuntimeException("Client does not exists in this database!");
+        throw new RuntimeException("Client does not exists in this database.");
     }
 
 
