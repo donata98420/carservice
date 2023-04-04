@@ -37,7 +37,7 @@ public class CarServiceImpl implements CarService {
             carMapper.updateCarFromCarDto(carDto, optionalCar.get());
             carRepository.save(optionalCar.get());
         } else {
-            throw new RuntimeException("This car does not exist anymore.");
+            throw new RuntimeException("This car does not exist in database.");
         }
         return carDto;
     }
