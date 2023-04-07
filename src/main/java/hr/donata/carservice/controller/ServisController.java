@@ -6,6 +6,9 @@ import hr.donata.carservice.entity.Servis;
 import hr.donata.carservice.service.ServisService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
 
@@ -53,15 +56,6 @@ public class ServisController {
     }
 
 
-    //List<Servis> findAllByDateOfService (Long servisId);
 
-    @GetMapping(path = "/getServisByDate/{id}")
-    private ResponseEntity<Servis> getServisByDate(@PathVariable Long id) {
-        Optional<Servis> optionalServis = servisService.getServisByDateOfService(id);
-        if(optionalServis.isPresent()) {
-            return ResponseEntity.ok(optionalServis.get());
-        }
-        throw new RuntimeException("This service does not exist in this database!");
-    }
 
 }

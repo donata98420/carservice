@@ -10,5 +10,6 @@ public interface ClientRepository extends JpaRepository<Client, Long> {
   //  List<Car> findAll (Long oib);
     List<Car> findClientByIdIs (Long clientId);
 
+
 }
 

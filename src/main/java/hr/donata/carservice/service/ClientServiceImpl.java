@@ -1,6 +1,7 @@
 package hr.donata.carservice.service;
 
 import hr.donata.carservice.dto.ClientDto;
+import hr.donata.carservice.entity.Car;
 import hr.donata.carservice.entity.Client;
 import hr.donata.carservice.mapper.ClientMapper;
 import hr.donata.carservice.repository.ClientRepository;
@@ -45,6 +46,7 @@ public class ClientServiceImpl implements ClientService{
 
         return clientRepository.findAll();
     }
+
 
     @Override
     public void deleteClient(Long id) {
