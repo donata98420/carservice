@@ -4,16 +4,12 @@ import hr.donata.carservice.dto.CarDto;
 import hr.donata.carservice.entity.Car;
 import hr.donata.carservice.mapper.CarMapper;
 import hr.donata.carservice.repository.CarRepository;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
 
-@Component
 @Service
 public class CarServiceImpl implements CarService {
-
     private final CarRepository carRepository;
     private final CarMapper carMapper;
 
@@ -43,9 +39,8 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
-    public void deleteCarService(Long id) {
-
-        carRepository.deleteById(id);
+    public Optional<Car> findByColor(String color) {
+        return carRepository.findByColor(color);
     }
 
     @Override

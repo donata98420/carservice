@@ -6,13 +6,11 @@ import hr.donata.carservice.entity.Car;
 import hr.donata.carservice.entity.Client;
 import org.mapstruct.*;
 import org.mapstruct.factory.Mappers;
-
 import java.util.ArrayList;
 import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface ClientMapper {
-
     ClientMapper INSTANCE = Mappers.getMapper(ClientMapper.class);
 
     @Mapping(source = "carList", target = "carList", qualifiedByName = "toCarDtos")
@@ -36,8 +34,7 @@ public interface ClientMapper {
     @Mapping(target = "id", ignore = true)
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
 
-    default void updateClientFromClientDto(ClientDto clientDto, @MappingTarget Client client) {}
-
+     void updateClientFromClientDto(ClientDto clientDto, @MappingTarget Client client);
 
 }
 

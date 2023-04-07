@@ -2,11 +2,8 @@ package hr.donata.carservice.service;
 
 import hr.donata.carservice.dto.ClientDto;
 import hr.donata.carservice.entity.Client;
-import org.springframework.stereotype.Component;
-
 import java.util.List;
 import java.util.Optional;
-@Component
 
 public interface ClientService {
 

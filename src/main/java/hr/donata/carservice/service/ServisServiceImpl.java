@@ -1,27 +1,20 @@
 package hr.donata.carservice.service;
 
-
-import hr.donata.carservice.dto.ClientDto;
 import hr.donata.carservice.dto.ServisDto;
-import hr.donata.carservice.entity.Client;
 import hr.donata.carservice.entity.Servis;
 import hr.donata.carservice.mapper.ServisMapper;
 import hr.donata.carservice.repository.ServisRepository;
-import lombok.Builder;
-import lombok.Data;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
-
-
 @Service
-@Data
-@Builder
 public class ServisServiceImpl implements ServisService{
-
     private final ServisRepository servisRepository;
     private final ServisMapper servisMapper;
+    private LocalDateTime dateOfService;
+
     public ServisServiceImpl(ServisRepository servisRepository, ServisMapper servisMapper) {
 
         this.servisRepository = servisRepository;
@@ -53,6 +46,11 @@ public class ServisServiceImpl implements ServisService{
         }
 
         return servisDto;
+    }
+
+    @Override
+    public Optional<Servis> getServisByDateOfService(Long id) {
+        return servisRepository.getByDateOfService(dateOfService);
     }
 
     @Override

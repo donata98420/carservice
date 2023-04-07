@@ -10,7 +10,6 @@ public enum CarType {
     VOLVO("C40", "Ex90");
     private String label;
     private String shortLabel;
-
     CarType(String label, String shortLabel) {
 
         this.label = label;

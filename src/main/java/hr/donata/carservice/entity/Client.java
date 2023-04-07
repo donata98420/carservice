@@ -2,9 +2,7 @@ package hr.donata.carservice.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-
 import java.util.List;
-
 
 @Entity
 @Table(name = "client")
@@ -12,14 +10,10 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Client {
-
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "client_sequence")
     @SequenceGenerator(name = "client_sequence", allocationSize = 1)
-
-
     private Long id;
-
     @Column(name = "firstname")
     private String firstName;
 
@@ -46,6 +40,5 @@ public class Client {
 
     @OneToMany(mappedBy="client", fetch = FetchType.EAGER)
     private List<Car> carList;
-
 
 }

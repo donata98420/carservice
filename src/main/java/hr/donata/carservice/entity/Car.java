@@ -1,10 +1,8 @@
 package hr.donata.carservice.entity;
 
-
 import hr.donata.carservice.dto.CarType;
 import jakarta.persistence.*;
 import lombok.*;
-
 import java.util.List;
 
 @Entity
@@ -12,23 +10,12 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-
-
-
 public class Car {
-    
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    //@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "car_sequence")
-    //@SequenceGenerator(name = "car_sequence", allocationSize = 10)
-    //@Setter(AccessLevel.PRIVATE)
-
     private Long id;
-
     @Column(name = "year")
     private Long year;
-
     @Column(name ="carType")
     @Enumerated(EnumType.STRING)
     private CarType carType;

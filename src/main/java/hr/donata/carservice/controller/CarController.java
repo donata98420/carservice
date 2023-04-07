@@ -3,20 +3,14 @@ package hr.donata.carservice.controller;
 import hr.donata.carservice.dto.CarDto;
 import hr.donata.carservice.entity.Car;
 import hr.donata.carservice.service.CarService;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Optional;
 
-@Component
-@Qualifier("car-controller")
 @RestController
 @RequestMapping("/car")
 public class CarController {
-
 
     private final CarService carService;
     public CarController(CarService carService)
@@ -35,7 +29,6 @@ public class CarController {
         carService.update(carDto, id);
         return ResponseEntity.ok(carDto);
     }
-
 
     @DeleteMapping(path = "/delete/{id}")
     private ResponseEntity<String> deleteCar(@PathVariable Long id) {
@@ -58,8 +51,13 @@ public class CarController {
         throw new RuntimeException("This car does not exists in this database!");
     }
 
-
-
-
+    @GetMapping(path = "/get/{carColor}")
+    private ResponseEntity<Object> findByColor(@PathVariable String carColor) {
+        Optional<Car> optionalCar = carService.findByColor(carColor);
+        if (optionalCar.isPresent()) {
+            return ResponseEntity.ok(optionalCar.get());
+        }
+        throw new RuntimeException("There is no car in this color.");
+    }
 
 }

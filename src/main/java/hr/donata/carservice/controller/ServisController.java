@@ -4,28 +4,18 @@ package hr.donata.carservice.controller;
 import hr.donata.carservice.dto.ServisDto;
 import hr.donata.carservice.entity.Servis;
 import hr.donata.carservice.service.ServisService;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Optional;
 
-@Configuration
-@Qualifier("servis-controller")
-@Component
+
 @RestController
 @RequestMapping("/servis")
 public class ServisController {
-
-
     private final ServisService servisService;
 
-
     public ServisController(ServisService servisService) {
-
         this.servisService = servisService;
     }
 
@@ -41,13 +31,11 @@ public class ServisController {
         return ResponseEntity.ok(servisDto);
     }
 
-
     @DeleteMapping(path = "/delete/{id}")
     private ResponseEntity<String> deleteServis(@PathVariable Long id) {
         servisService.deleteServis(id);
         return ResponseEntity.ok("Your service has been deleted.");
     }
-
 
     @GetMapping(path = "/getAll")
     private ResponseEntity<List<Servis>> getAllServis() {
@@ -65,5 +53,15 @@ public class ServisController {
     }
 
 
+    //List<Servis> findAllByDateOfService (Long servisId);
+
+    @GetMapping(path = "/getServisByDate/{id}")
+    private ResponseEntity<Servis> getServisByDate(@PathVariable Long id) {
+        Optional<Servis> optionalServis = servisService.getServisByDateOfService(id);
+        if(optionalServis.isPresent()) {
+            return ResponseEntity.ok(optionalServis.get());
+        }
+        throw new RuntimeException("This service does not exist in this database!");
+    }
 
 }
