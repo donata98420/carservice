@@ -17,4 +17,5 @@ public interface ServisService {
     List<Servis> getAllServis();
     ServisDto update(ServisDto servisDto, Long id);
 
+    List<Servis> getAllWorkers();
 }

@@ -55,6 +55,11 @@ public class ServisController {
         throw new RuntimeException("This service does not exist in this database!");
     }
 
+    @GetMapping(path = "/getAllWorkers")
+    private ResponseEntity<List<Servis>> getAllWorkers() {
+        List<Servis> allServis = servisService.getAllWorkers();
+        return ResponseEntity.ok(allServis);
+    }
 
 
 

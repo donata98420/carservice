@@ -53,12 +53,19 @@ public class ServisServiceImpl implements ServisService {
     }
 
     @Override
+    public List<Servis> getAllWorkers() {
+        return servisRepository.findAll();
+    }
+
+    @Override
     public Optional<Servis> getServisById(Long id) {
+
         return servisRepository.findById(id);
     }
 
     @Override
     public List<Servis> getAllServis() {
+
         return servisRepository.findAll();
     }
 }
