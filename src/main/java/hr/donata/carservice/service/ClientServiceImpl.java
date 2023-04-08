@@ -47,6 +47,11 @@ public class ClientServiceImpl implements ClientService{
         return clientRepository.findAll();
     }
 
+    @Override
+    public List<Client> getAllClientsByCountry(String country) {
+        return clientRepository.findAll();
+    }
+
 
     @Override
     public void deleteClient(Long id) {

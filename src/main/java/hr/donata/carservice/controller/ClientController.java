@@ -51,6 +51,12 @@ public class ClientController {
     }
 
 
+    @GetMapping(path = "/getAllByCountry")
+    private ResponseEntity<List<Client>> getAllClientsByCountry(@RequestParam("country") String country) {
+        List<Client> clients = clientService.getAllClientsByCountry(country);
+        return ResponseEntity.ok(clients);
+    }
+
 
 
 }
