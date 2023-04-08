@@ -50,13 +50,10 @@ public class ClientController {
         throw new RuntimeException("Client does not exists in this database.");
     }
 
-
     @GetMapping(path = "/getAllByCountry")
     private ResponseEntity<List<Client>> getAllClientsByCountry(@RequestParam("country") String country) {
         List<Client> clients = clientService.getAllClientsByCountry(country);
         return ResponseEntity.ok(clients);
     }
-
-
 
 }

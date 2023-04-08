@@ -5,8 +5,6 @@ import hr.donata.carservice.entity.Servis;
 import hr.donata.carservice.mapper.ServisMapper;
 import hr.donata.carservice.repository.ServisRepository;
 import org.springframework.stereotype.Service;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -26,12 +24,6 @@ public class ServisServiceImpl implements ServisService {
         servisRepository.save(servis);
         return servisDto;
     }
-
-    @Override
-    public Optional<Servis> getServisByDate(LocalDateTime date) {
-        return Optional.empty();
-    }
-
 
     @Override
     public void deleteServis(Long id) {
