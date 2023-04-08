@@ -51,9 +51,9 @@ public class CarController {
         throw new RuntimeException("This car does not exists in this database!");
     }
 
-    @GetMapping(path = "/get/{carColor}")
-    private ResponseEntity<Object> findByColor(@PathVariable String carColor) {
-        Optional<Car> optionalCar = carService.findByColor(carColor);
+    @GetMapping(path = "/get/{color}")
+    private ResponseEntity<Object> findByColor(@PathVariable String color) {
+        Optional<Car> optionalCar = carService.findByColor(color);
         if (optionalCar.isPresent()) {
             return ResponseEntity.ok(optionalCar.get());
         }
