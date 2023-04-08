@@ -52,10 +52,6 @@ public class ServisServiceImpl implements ServisService {
         return servisDto;
     }
 
-    @Override
-    public List<Servis> getAllWorkers() {
-        return servisRepository.findAll();
-    }
 
     @Override
     public Optional<Servis> getServisById(Long id) {

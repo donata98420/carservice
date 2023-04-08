@@ -1,6 +1,5 @@
 package hr.donata.carservice.controller;
 
-import hr.donata.carservice.entity.Car;
 import hr.donata.carservice.entity.Client;
 import hr.donata.carservice.service.ClientService;
 import org.springframework.http.HttpStatus;
