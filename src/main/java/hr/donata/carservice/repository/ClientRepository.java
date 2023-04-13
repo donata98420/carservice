@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface ClientRepository extends JpaRepository<Client, Long> {
 
-    List<Car> findClientByIdIs (Long clientId);
+    List<Client> findAllByCountry(String country);
 
 
 }
