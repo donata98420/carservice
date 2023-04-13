@@ -8,6 +8,6 @@ import java.util.Optional;
 
 public interface CarRepository extends JpaRepository<Car, Long> {
 
-
     List<Car> findAllByColor(String color);
+    List<Car> findClientByIdIs (Long clientId);
 }

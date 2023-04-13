@@ -52,7 +52,7 @@ public class ServisController {
         throw new RuntimeException("This service does not exist in this database!");
     }
 
-    @GetMapping(path = "/getAllByDateTime")
+    @GetMapping(path = "/get/servisDate/{dateTime}")
     private ResponseEntity<List<Servis>> getAllServisByDateTime(@RequestParam("dateTime") String dateTime) {
         List<Servis> allServis = servisService.getAllServisByDateTime(dateTime);
         return ResponseEntity.ok(allServis);
