@@ -13,8 +13,8 @@ import java.util.Optional;
 public class CarController {
 
     private final CarService carService;
-    public CarController(CarService carService)
-    {
+
+    public CarController(CarService carService) {
         this.carService = carService;
     }
 
@@ -45,19 +45,18 @@ public class CarController {
     @GetMapping(path = "/get/{id}")
     private ResponseEntity<Car> getById(@PathVariable Long id) {
         Optional<Car> optionalCar = carService.getCarById(id);
-        if(optionalCar.isPresent()) {
+        if (optionalCar.isPresent()) {
             return ResponseEntity.ok(optionalCar.get());
         }
         throw new RuntimeException("This car does not exists in this database!");
     }
 
-    @GetMapping(path = "/get/{color}")
-    private ResponseEntity<Object> findByColor(@PathVariable String color) {
-        Optional<Car> optionalCar = carService.findByColor(color);
-        if (optionalCar.isPresent()) {
-            return ResponseEntity.ok(optionalCar.get());
-        }
-        throw new RuntimeException("There is no car in this color.");
-    }
+    @GetMapping(path = "/get/color/{color}")
+    private ResponseEntity<List<CarDto>> findByColor(@PathVariable String color) {
+        List<CarDto> colorCarList = carService.findAllByColor(color);
 
+        return ResponseEntity.ok(colorCarList);
+
+
+    }
 }

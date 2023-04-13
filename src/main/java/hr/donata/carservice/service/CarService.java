@@ -13,5 +13,5 @@ public interface CarService {
     Optional<Car> getCarById(Long id);
     CarDto update(CarDto carDto, Long id);
 
-    Optional<Car> findByColor(String color);
+    List<CarDto> findAllByColor(String color);
 }

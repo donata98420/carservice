@@ -14,10 +14,7 @@ public interface CarMapper {
     CarDto carToCarDto(Car car);
 
      void updateCarFromCarDto(CarDto carDto, @MappingTarget Car car);
-     void updateServisFromServisDto(ServisDto servisDto, @MappingTarget Servis servis);
 
-    @Mapping(source = "carId", target = "car.id")
-    Servis servisDtoToServis(ServisDto servisDto);
 
     @Mapping(source = "clientId", target = "client.id")
     Car carDtoToCar(CarDto carDto);

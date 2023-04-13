@@ -5,6 +5,8 @@ import hr.donata.carservice.entity.Car;
 import hr.donata.carservice.mapper.CarMapper;
 import hr.donata.carservice.repository.CarRepository;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -39,8 +41,16 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
-    public Optional<Car> findByColor(String color) {
-        return carRepository.findByColor(color);
+    public List<CarDto> findAllByColor(String color) {
+        List<Car> allByColor = carRepository.findAllByColor(color);
+
+        List<CarDto> carDtosByColor = new ArrayList<>();
+
+        for(Car car : allByColor) {
+            carDtosByColor.add(carMapper.carToCarDto(car));
+        }
+
+        return carDtosByColor;
     }
 
     @Override

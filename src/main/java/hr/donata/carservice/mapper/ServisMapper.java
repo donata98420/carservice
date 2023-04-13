@@ -29,6 +29,8 @@ public interface ServisMapper {
         return servisDtos;
     }
 
+
+
     @Mapping(target = "id", ignore = true)
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
 
