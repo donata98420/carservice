@@ -12,6 +12,5 @@ public interface CarService {
     void deleteCar(Long id);
     Optional<Car> getCarById(Long id);
     CarDto update(CarDto carDto, Long id);
-
     List<CarDto> findAllByColor(String color);
 }

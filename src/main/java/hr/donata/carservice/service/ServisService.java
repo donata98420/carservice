@@ -7,10 +7,8 @@ import java.util.Optional;
 public interface ServisService {
     void deleteServis(Long id);
     ServisDto create(ServisDto servis);
-
     Optional<Servis> getServisById(Long id);
     List<Servis> getAllServis();
     ServisDto update(ServisDto servisDto, Long id);
-
     List<Servis> getAllServisByDateTime(String dateTime);
 }
