@@ -1,9 +1,7 @@
 package hr.donata.carservice.mapper;
 
 import hr.donata.carservice.dto.CarDto;
-import hr.donata.carservice.dto.ServisDto;
 import hr.donata.carservice.entity.Car;
-import hr.donata.carservice.entity.Servis;
 import org.mapstruct.*;
 import org.mapstruct.factory.Mappers;
 

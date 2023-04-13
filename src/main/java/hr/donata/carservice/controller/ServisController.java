@@ -1,6 +1,5 @@
 package hr.donata.carservice.controller;
 
-
 import hr.donata.carservice.dto.ServisDto;
 import hr.donata.carservice.entity.Servis;
 import hr.donata.carservice.service.ServisService;
@@ -8,7 +7,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
-
 
 @RestController
 @RequestMapping("/servis")

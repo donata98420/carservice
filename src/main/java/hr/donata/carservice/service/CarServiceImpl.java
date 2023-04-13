@@ -5,7 +5,6 @@ import hr.donata.carservice.entity.Car;
 import hr.donata.carservice.mapper.CarMapper;
 import hr.donata.carservice.repository.CarRepository;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;

@@ -4,7 +4,6 @@ import hr.donata.carservice.dto.ServisDto;
 import hr.donata.carservice.entity.Servis;
 import org.mapstruct.*;
 import org.mapstruct.factory.Mappers;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,8 +27,6 @@ public interface ServisMapper {
         }
         return servisDtos;
     }
-
-
 
     @Mapping(target = "id", ignore = true)
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
